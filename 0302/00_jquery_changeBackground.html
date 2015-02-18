@@ -1,21 +1,18 @@
 <style>
     .target{ color: rgb(102, 102, 102); width: 180px; height: 40px; border: 1px solid rgb(170, 170, 170); margin: 10px; padding: 5px; background: rgb(255, 240, 245);}
-    
 </style>
 
-
 <div class="html-area">
-
-<div class="target">div.target<br></div>
-
-<div class="target">div.target<br></div>
-
-<div class="target">div.target<br></div>
-
+  <div class="target">div.target<br></div>
+  <div class="target">div.target<br></div>
+  <div class="target">div.target<br></div>
 </div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 //your code here.
-
+  $(document).ready(function(){
+    // finding all div's with the class of target
+    $('div.target').eq(1).css('background-color', 'limegreen');
+  });
 </script>
