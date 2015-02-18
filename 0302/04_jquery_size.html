@@ -5,8 +5,14 @@
 
 <div id="target">#target<br></div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 //your code here.
-
+  $(document).ready(function() {
+    var $target = $('#target');
+    $target.css({
+      width:$target.width()*2,
+      height:$target.height()*2
+    });
+  });
 </script>
