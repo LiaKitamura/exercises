@@ -2,11 +2,15 @@
 .target{ color: rgb(255, 255, 255); width: 180px; height: 40px; border: 1px solid rgb(34, 34, 34); margin: 10px; padding: 5px; background: rgb(34, 139, 34);}
 </style>
 
+<div class="target" style="">div.target<br><button data-role="none" disabled="true">button</button></div>
 
-<div class="target" style="">div.target<br><button data-role="none">button</button></div>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 //your code here.
-
+  $(document).ready(function() {
+    // this method works because the button above has the disabled attribute.this just removes the disabled attribute all together.
+    // $('button').removeAttr('disabled');
+    // another method is if disabled = "true" was not there it would be like:
+      $('button').attr('disabled', 'disabled');
+  });
 </script>
