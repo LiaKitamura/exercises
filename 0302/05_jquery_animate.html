@@ -5,8 +5,15 @@
 
 <div id="target">#target<br></div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 //your code here.
-
+  $(document).ready(function() {
+    var $target = $('#target');
+    $target.animate({
+      // this gets the cached target then gets the current width first and multiplies by 2
+      width:$target.width()*2,
+      height:$target.height()*2
+    }, { duration: 5000 });
+  });
 </script>
