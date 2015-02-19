@@ -25,7 +25,23 @@ Call that function three times, passing in different values each time.
 
     <script>
         // your code here.
+        var calculateSupply = function(age, ratePerDay){
+          const MAXLIFE = 95;
+          var years = 0,
+              days = 0,
+              leapYears,
+              amount = 0;
 
+
+        years = MAXLIFE - age;
+        leapYears = years/4;
+        days = years * 365 + leapYears;
+
+        amount = days * ratePerDay;
+
+        return amount;
+        };
+        console.log("you will need " + calculateSupply(27, 0.5) + " to last you until the ripe old age of 95");
     </script>
 </body>
 </html>

@@ -5,22 +5,29 @@
     <title>Document</title>
 </head>
 <body>
-
-<h1>The Age Calculator</h1>
-
-<p>
-    Write a function named calculateAge that:
-takes 2 arguments: birth year, current year.
-calculates the 2 possible ages based on those years.
-outputs the result to the screen like so: "You are either NN or NN"
-</p>
-<p>
+  <h1>The Age Calculator</h1>
+  <p>
+      Write a function named calculateAge that:
+  takes 2 arguments: birth year, current year.
+  calculates the 2 possible ages based on those years.
+  outputs the result to the screen like so: "You are either NN or NN"
+  </p>
+  <p>
     Bonus: Figure out how to get the current year in JavaScript instead of passing it in.
-</p>
+  </p>
 
-<script>
-    // your code here.
-    
-</script>
+  <script>
+      // your code here.
+      var calculateAge = function(birth, current){
+        var age1 = 0,
+            age2 = 0;
+
+        age1 = current - birth;
+        age2 - current-1 - birth;
+
+        return "You are either " + age1 + " years or " + age2 + " years old.";
+      };
+      console.log(calculateAge(1893, 2015));
+  </script>
 </body>
 </html>
