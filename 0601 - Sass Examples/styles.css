@@ -1,0 +1,267 @@
+/*******************
+* Sass Examples
+*******************/
+/* line 24, styles.scss */
+.selector {
+  font-size: 24px;
+  border: 1px solid #00f;
+}
+
+/* line 35, styles.scss */
+body {
+  font-family: Georgia, serif;
+}
+
+/* line 39, styles.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 51, styles.scss */
+.container {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 62, styles.scss */
+.shadows {
+  -webkit-box-shadow: 0 1px 2px #cecfd5, inset 0 0 5px #cecfd5;
+  -moz-box-shadow: 0 1px 2px #cecfd5, inset 0 0 5px #cecfd5;
+  box-shadow: 0 1px 2px #cecfd5, inset 0 0 5px #cecfd5;
+}
+
+/* line 75, styles.scss */
+p {
+  margin-bottom: 48px;
+}
+
+/* line 81, styles.scss */
+.container ul {
+  margin: 1em;
+}
+/* line 84, styles.scss */
+.container ul li {
+  display: inline;
+}
+/* line 87, styles.scss */
+.container ul li .link {
+  color: red;
+}
+
+/* line 94, styles.scss */
+a {
+  text-decoration: none;
+}
+/* line 97, styles.scss */
+a:hover, .button, .button-red {
+  text-decoration: underline;
+}
+/* line 101, styles.scss */
+.sidebar a {
+  color: blue;
+}
+
+/* line 107, styles.scss */
+.container ul {
+  margin: 1em;
+}
+
+/* line 110, styles.scss */
+.container ul li {
+  display: inline;
+}
+
+/* line 113, styles.scss */
+.container ul li .link {
+  color: red;
+}
+
+/* line 117, styles.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 118, styles.scss */
+a:hover, .button, .button-red {
+  text-decoration: underline;
+}
+
+/* line 119, styles.scss */
+.sidebar a {
+  color: blue;
+}
+
+/* line 122, styles.scss */
+.hero-unit {
+  font-familiy: Helvetica;
+  font-size: 200%;
+  font-weight: bold;
+  border-right: 1em;
+  border-bottom: 1em;
+}
+
+/* line 136, styles.scss */
+.button, .button-red {
+  background-color: #ccc;
+  display: inline-block;
+  padding: 1em 1.5em;
+  color: #fff;
+}
+
+/* line 145, styles.scss */
+.button-red {
+  background-color: red;
+}
+
+/* line 151, styles.scss */
+.box, .bigger-box, .huge-box {
+  padding: 1em;
+  border: 1px #ccc;
+}
+
+/* line 155, styles.scss */
+.bigger-box, .huge-box {
+  padding: 2em;
+}
+
+/* line 160, styles.scss */
+.huge-box {
+  padding: 10em;
+}
+
+/* line 166, styles.scss */
+.box, .bigger-box, .huge-box, .bigger-box, .huge-box, .huge-box {
+  padding: 1em;
+  border: 1px #ccc;
+}
+
+/* line 170, styles.scss */
+.bigger-box, .huge-box, .huge-box {
+  padding: 2em;
+}
+
+/* line 173, styles.scss */
+.huge-box {
+  padding: 10em;
+}
+
+/* line 176, styles.scss */
+a:hover, .button, .button-red, .button, .button-red, .button-red, button {
+  text-decoration: underline;
+}
+
+/* line 179, styles.scss */
+.button, .button-red, .button-red {
+  background-color: #ccc;
+  display: inline-block;
+  padding: 1em 1.5em;
+  color: #fff;
+}
+
+/* line 193, styles.scss */
+div {
+  width: 3.20833in;
+}
+
+/* line 197, styles.scss */
+.container {
+  font: 16px/24px;
+  height: 100px;
+  width: 500px;
+}
+
+/* line 205, styles.scss */
+button:before {
+  content: "Quoted string";
+  font-family: sans-serif;
+}
+
+/*****************************************
+* Compass
+*****************************************/
+/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 224, styles.scss */
+.box, .bigger-box, .huge-box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
+  -moz-box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
+  box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
+}
+
+/* line 230, styles.scss */
+.box, .bigger-box, .huge-box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+  -moz-box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+  box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+}

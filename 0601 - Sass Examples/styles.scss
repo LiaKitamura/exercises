@@ -1,0 +1,248 @@
+/*******************
+* Sass Examples
+*******************/
+
+// 1. Install Sass
+// $ sudo gem install sass
+
+// 2. simple compile
+// $ sass input.scss output.css
+
+// 3. Watch file - watch a file and recompile everytime it is saved.
+// $ sass --watch input.scss:output.css
+
+// 4. Syntax
+// Original Sass removed the need for brackets and semicolons.
+// Rules were applied to selectors based on their indentation below the selector.
+// Example:
+
+//.selector
+//	font-size:24px
+//	border: 1px solid #00f
+
+// SCSS or Sassy CSS (my preferred method) reintroduced brackets and semicolons and is whitespace agnostic.
+.selector{
+	font-size:24px;
+	border: 1px solid #00f;
+}
+
+// 5. Variables
+// Variables are denoted with the '$' symbol and can store any information (color, font values, text, etc.).
+
+$heading-font: Helvetica, Arial, sans-serif;
+$body-font: Georgia, serif;
+
+body{
+	font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $heading-font;
+}
+
+// 6. Mixins
+// Mixins are used to include sets of information.
+@mixin border-radius($radius: 10px){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+.container{
+	@include border-radius(5px);
+}
+
+// You can also have a variable number of arguments for your mixin.
+@mixin box-shadow($shadow...){
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+.shadows{
+	@include box-shadow(0 1px 2px #cecfd5, inset 0 0 5px #cecfd5)	
+}
+  
+
+// 7. Functions
+// Functions give us the ability to do math and tons of other stuff inside our sass file.
+$base-font-size: 16;
+
+@function global-margin($bfs){
+	@return($bfs * 1.5) * 2 + px;
+}
+
+p{
+	margin-bottom: global-margin($base-font-size);
+}
+
+// 8. Nesting
+.container{
+	ul{
+		margin: 1em;
+		
+		li{
+			display: inline;
+			
+			.link{
+				color: red;			
+			}
+		}
+	}
+}
+
+a{
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+	
+	.sidebar & {
+		color: blue;
+	}
+}
+
+//compiles to:
+.container ul{
+	margin: 1em;
+}
+.container ul li {
+	display: inline;
+}
+.container ul li .link {
+	color: red;
+}
+
+a{ text-decoration: none; }
+a:hover { text-decoration: underline; }
+.sidebar a{ color: blue; }
+
+// Nested properties
+.hero-unit{
+	font: {
+		familiy: Helvetica;
+		size: 200%;
+		weight: bold;
+	}
+	
+	border: {
+		right: 1em;
+		bottom: 1em;
+	}
+}
+
+// 9. Inheritance
+.button {
+	background-color: #ccc;
+	display: inline-block;
+	padding: 1em 1.5em;
+	color: #fff;
+	
+	@extend a:hover;
+}
+
+.button-red{
+	@extend .button;
+	
+	background-color: red;
+}
+
+.box {
+	padding: 1em;
+	border: 1px #ccc;
+}
+.bigger-box{
+	@extend .box;
+	padding: 2em;
+}
+
+.huge-box{
+	@extend .bigger-box;
+	padding: 10em;
+}
+
+//compiles to :
+.box, .bigger-box, .huge-box {
+  padding: 1em;
+  border: 1px #ccc; }
+
+.bigger-box, .huge-box {
+  padding: 2em; }
+
+.huge-box {
+  padding: 10em; }
+
+a:hover, .button, .button-red, button {
+  text-decoration: underline; }
+
+.button, .button-red {
+  background-color: #ccc;
+  display: inline-block;
+  padding: 1em 1.5em;
+  color: #fff; }
+
+// 10. Partials
+// Partials are separate files that help to create smaller sections that are easier to read and edit.
+// File names of partial by convention start with and underscore (e.g. "_reset.scss" or "_typography.scss").
+// Partials are imported using @import "filename" (note the absence of both the underscore AND the file extension .scss).
+
+
+// 11. Operators
+// Sass does automatic type conversion whenever possible. Operators like "+", "-", "*", and "/" all retain their mathmatecal values and precedence.
+div{
+	width: 3in + 20px;
+}
+
+.container{
+	font:16px/24px; // this line will not be divided because the font property uses this syntax natively.
+	$height:500px;
+	height: $height / 5; // $height will be divided by 5.
+	width: (1000px / 2); // this line requires parentheses for 1000px to be divided by 2.
+}
+
+// concatenations are converted to the first type seen
+button:before {
+	content: "Quoted " + string; // compiles to "Quoted string" because the "Quoted " (in quotes) was first.
+	font-family: sans- + "serif";  // compiles to sans-serif (no quotes) becuase the unquoted part was first.
+}
+
+
+/*****************************************
+* Compass
+*****************************************/
+// Compass is a "Authoring Framework" meaning, it has a number of predefined functions and helper classes, but it has no predefined styles of its own. 
+
+// 1. Install Compass
+// $ sudo gem install compass
+
+// 2. Using Compass
+// - import Compass' reset
+@import "compass/reset";
+
+// - CSS3 properties w/ vendor prefixes 
+.box{
+	@include border-radius(10px); // border-radius() is a predefined Compass function.
+	@include box-shadow(0 0 3px 3px #444, inset 5px 5px 6px #555);
+}
+
+// compiles to :
+.box{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+	-moz-box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+	box-shadow: 0 0 3px 3px #444444, inset 5px 5px 6px #555555;
+}
+
+// See http://compass-style.org/reference/compass/ 
+// and http://compass-style.org/reference/compass/css3/
+// for more info on specific mixins/functions.
+
+// 3. Compass Watch folder
+// This differs from Sass' built in 'watch' function as it watches for any sass file changed in a folder directory and recompiles to the specified output in the config.rb file found in the root of the watch folder. 
+
+// $ cd /path/to/project
+// $ compass watch
