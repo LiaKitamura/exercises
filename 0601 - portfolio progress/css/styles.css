@@ -167,6 +167,45 @@ footer p {
   padding: 0 1em;
 }
 
+/* line 116, ../sass/styles.scss */
+.contact {
+  position: fixed;
+  right: 10%;
+  bottom: 0;
+  background: #777;
+  border: 1px solid #555;
+  border-bottom: none;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  padding: 1em;
+}
+/* line 126, ../sass/styles.scss */
+.contact input, .contact textarea {
+  width: 250px;
+  padding: 5px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+/* line 134, ../sass/styles.scss */
+.contact span.close {
+  background: #000;
+  color: white;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  border: 2px solid white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  position: absolute;
+  top: -1em;
+  right: -1em;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?odhb0i");
