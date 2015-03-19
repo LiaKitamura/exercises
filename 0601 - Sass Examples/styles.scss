@@ -2,7 +2,7 @@
 * Sass Examples
 *******************/
 
-// 1. Install Sass
+// 1. Install Sass 
 // $ sudo gem install sass
 
 // 2. simple compile
@@ -22,7 +22,7 @@
 
 // SCSS or Sassy CSS (my preferred method) reintroduced brackets and semicolons and is whitespace agnostic.
 .selector{
-	font-size:24px;
+	font-size:10px;
 	border: 1px solid #00f;
 }
 
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container{
-	@include border-radius(5px);
+	@include border-radius(50%);
 }
 
 // You can also have a variable number of arguments for your mixin.
@@ -121,7 +121,7 @@ a:hover { text-decoration: underline; }
 // Nested properties
 .hero-unit{
 	font: {
-		familiy: Helvetica;
+		family: Helvetica;
 		size: 200%;
 		weight: bold;
 	}
@@ -140,6 +140,7 @@ a:hover { text-decoration: underline; }
 	color: #fff;
 	
 	@extend a:hover;
+//	@include a:hover;
 }
 
 .button-red{
@@ -187,11 +188,13 @@ a:hover, .button, .button-red, button {
 // File names of partial by convention start with and underscore (e.g. "_reset.scss" or "_typography.scss").
 // Partials are imported using @import "filename" (note the absence of both the underscore AND the file extension .scss).
 
+// @import "reset";
+
 
 // 11. Operators
 // Sass does automatic type conversion whenever possible. Operators like "+", "-", "*", and "/" all retain their mathmatecal values and precedence.
 div{
-	width: 3in + 20px;
+	width: 3in + 20px; // width: 3.235in;
 }
 
 .container{
