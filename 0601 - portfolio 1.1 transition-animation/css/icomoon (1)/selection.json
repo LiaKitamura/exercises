@@ -18,9 +18,9 @@
 			"attrs": [],
 			"properties": {
 				"id": 1292,
-				"order": 8,
+				"order": 4,
 				"prevSize": 32,
-				"code": 58880,
+				"code": 60040,
 				"ligatures": "google-plus, brand2",
 				"name": "google-plus"
 			},
@@ -47,7 +47,7 @@
 				"id": 1297,
 				"order": 1,
 				"prevSize": 32,
-				"code": 58881,
+				"code": 60044,
 				"ligatures": "facebook, brand6",
 				"name": "facebook"
 			},
@@ -74,7 +74,7 @@
 				"id": 1301,
 				"order": 6,
 				"prevSize": 32,
-				"code": 58882,
+				"code": 60048,
 				"ligatures": "instagram, brand10",
 				"name": "instagram"
 			},
@@ -102,7 +102,7 @@
 				"id": 1302,
 				"order": 2,
 				"prevSize": 32,
-				"code": 58883,
+				"code": 60049,
 				"ligatures": "twitter, brand11",
 				"name": "twitter"
 			},
@@ -129,7 +129,7 @@
 				"id": 1308,
 				"order": 7,
 				"prevSize": 32,
-				"code": 58884,
+				"code": 60055,
 				"ligatures": "youtube, brand14",
 				"name": "youtube"
 			},
@@ -156,7 +156,7 @@
 				"id": 1322,
 				"order": 3,
 				"prevSize": 32,
-				"code": 58885,
+				"code": 60070,
 				"ligatures": "dribbble, brand29",
 				"name": "dribbble"
 			},
@@ -183,8 +183,7 @@
 				"emSize": 1024,
 				"baseline": 6.25,
 				"whitespace": 50
-			},
-			"resetPoint": 58880
+			}
 		},
 		"imagePref": {
 			"prefix": "icon-",

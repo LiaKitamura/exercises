@@ -88,7 +88,7 @@ header, footer{
 	$shotPadding: 10;
 	$shotBorder: 1;
 	$shotUnit: px;
-	width: $numberOfShots * ($shotWidth + ($shotMargin * 2)+ ($shotPadding * 2) + ($shotBorder * 2)) + $shotUnit;
+//	width: $numberOfShots * ($shotWidth + ($shotMargin * 2)+ ($shotPadding * 2) + ($shotBorder * 2)) + $shotUnit;
 	min-height: $shotHeight + $shotUnit;
 	
 	li{
@@ -113,3 +113,4 @@ footer{
 
 
 @import "social";
+@import "animate";
