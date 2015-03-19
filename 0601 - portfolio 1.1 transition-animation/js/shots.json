@@ -1,0 +1,31 @@
+{
+	"shots":[{
+		"title": "Lime Labs Website",
+		"imageUrl": "images/full/lime.jpg",
+		"thumb": "images/thumbs/lime.jpg"
+	},{
+		"title": "Spiro Labs Website",
+		"imageUrl": "images/full/spiro.jpg",
+		"thumb": "images/thumbs/spiro.jpg"
+	},{
+		"title": "Snake Game",
+		"imageUrl": "images/full/snake.jpg",
+		"thumb": "images/thumbs/snake.jpg"
+	},{
+		"title": "Digilife Simulation",
+		"imageUrl": "images/full/digilife.jpg",
+		"thumb": "images/thumbs/digilife.jpg"
+	},{
+		"title": "Rock Paper Scissors Lizard Spock",
+		"imageUrl": "images/full/rockpaper.jpg",
+		"thumb": "images/thumbs/rockpaper.jpg"
+	},{
+		"title": "Espiritu Webdsite",
+		"imageUrl": "images/full/espiritu.jpg",
+		"thumb": "images/thumbs/espiritu.jpg"
+	},{
+		"title": "I-Calq Website Design and Development",
+		"imageUrl": "images/full/icalq.jpg",
+		"thumb": "images/thumbs/icalq.jpg"
+	}]
+}

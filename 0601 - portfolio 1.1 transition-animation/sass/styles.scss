@@ -1,0 +1,184 @@
+// styles.scss
+// Sass stylesheet for portfolio
+
+// Import Compass reset
+@import "compass/reset";
+@import "compass/css3";
+@import "icons";
+
+// General
+
+body{
+	color: #333;
+	text-align: center;
+	font: {
+		size:1em;
+		family:Georgia, serif;
+	}
+	line-height: 1.5;
+}
+
+a{
+	text-decoration: none;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+h1{
+	font:{
+		family: Bitter, Georgia, serif;
+		size:2.25em;
+	}
+	padding: 0 1em;
+}
+
+
+// HEADER
+// ***************************************************
+header{
+	padding: 10em 0 14em;
+	
+	h1{
+		font-style: italic;
+	}
+}
+
+.avatar{
+	width: 100px;
+	height: 100px;
+	
+	@include box-shadow(0 0 0px 3px #fff, 0 0 0 4px #ccc, 0 4px 6px #333);
+	@include border-radius(50%);
+}
+
+
+// PROJECTS CAROUSEL
+// ***************************************************
+.carousel{
+	position: relative;
+}
+.shots-container{
+	width:100%;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	padding: 1em 0;
+}
+.shots{
+	overflow: hidden;
+	margin: 0;
+	padding: 0 2%;
+	$numberOfShots: 7;
+	$shotWidth: 400;
+	$shotHeight: 300;
+	$shotMargin: 10;
+	$shotPadding: 10;
+	$shotBorder: 1;
+	$shotUnit: px;
+	width: $numberOfShots * ($shotWidth + ($shotMargin * 2)+ ($shotPadding * 2) + ($shotBorder * 2)) + $shotUnit;
+	min-height: $shotHeight + $shotUnit;
+	
+	li{
+		float:left;
+		width: $shotWidth + $shotUnit;
+		height: $shotHeight + $shotUnit;
+		margin:0 ($shotMargin + $shotUnit);
+		padding: ($shotPadding + $shotUnit);
+		border: ($shotBorder + $shotUnit) solid #ddd;
+		@include border-radius(3px);
+	}
+}
+
+// FOOTER
+// ***************************************************
+footer {
+    p {
+        color: #777;
+        padding: 0 1em;
+    }
+}
+
+header,
+footer {
+    background: #f7f7f7;
+}
+ 
+.content,
+footer {
+    padding: 4em 0 6em;
+}
+ 
+.content {
+ 
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+ 
+    h1 {
+        color: #ea4c89; // dribbble brand color
+    }
+ 
+    > p {
+        font-size: .85em;
+        color: #aaa;
+    }
+}
+
+// Animations
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1s.5;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
