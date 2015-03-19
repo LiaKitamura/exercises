@@ -1,0 +1,177 @@
+<canvas id="canvas"></canvas>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script>
+ // test jquery
+$(document).ready(function(){
+
+
+    
+    init();
+    
+    //Add Keyboard controls
+    $(document).keydown(function(e){
+        var key = e.which;
+        if(key == "37" && dir != "right") dir = "left";
+        else if(key == "38" && dir != "down") dir = "up";
+        else if(key == "39" && dir != "left") dir = "right";
+        else if(key == "40" && dir != "up") dir = "down";
+    });
+});
+    
+    
+    
+        // SNAKE!!!
+    //grab html canvas element
+    var canvas = $('#canvas'),
+        // we can set the width and height of the canvas at the same time we store it to our vars.
+        w = canvas.attr("width", 400).width(),
+        h = canvas.attr("height",400).height(),
+        
+        // get the context of the canvas and set some default styles to use later.
+        cx = canvas[0].getContext("2d"),
+        fillColor = "blue",
+        strokeColor = "white";
+    
+    //Game vars
+    var cellWidth = 10, // how big cells should be (in pixels)
+        dir, // direction of snake
+        food, // x and y coord of food
+        score, // counter
+        snakeArray = [], // array to store snake pieces (in {x: x, y: y} format
+        gameLoop;
+    
+    // setup snake on game start.
+    function createSnake(){
+        var length = 5; //starting length
+        for(var i = 1; i<=length; i++){
+            snakeArray.unshift({x:i,y:0});
+        }
+    }
+    
+    // food gets painted at current {x,y}
+    function createFood(){
+        food = {
+            x: Math.floor(Math.random()*w/cellWidth),
+            y: Math.floor(Math.random()*h/cellWidth)
+        };
+        
+        //check to make sure it's not on the snake.
+        for(var i=0;i<snakeArray.length;i++){
+            if(food.x == snakeArray[i].x && 
+               food.y == snakeArray[i].y) createFood();
+        }
+    }
+        
+    // init function sets up new game.
+    function init(){
+        dir = "right"; //starting direction
+        createSnake();
+        createFood();
+        score = 0;
+        paint();
+        //setInterval for the game
+        if(typeof gameLoop != "undefined") clearInterval(gameLoop);
+        gameLoop = setInterval(paint,120);
+    }
+    
+    // Paint the screen on each interval
+    function paint(){
+        
+        // white the canvas
+        cx.fillStyle = "white";
+        cx.fillRect(0,0,w,h);
+        
+        // stroke the canvas (to see walls)
+        cx.strokeStyle = "black";
+        cx.strokeRect(0,0,w,h);
+        
+        //find snake head
+        var nx = snakeArray[0].x;
+        var ny = snakeArray[0].y; 
+        
+        //move in current direction.
+        switch(dir){
+            case "right":
+                nx++;
+                break;
+            case "left":
+                nx--;
+                break;
+            case "up":
+                ny--;
+                break;
+            case "down":
+                ny++;
+                break;
+            default:
+                nx++;
+                break;
+        }
+        
+//        if(dir == "right")nx++;
+//        else if( dir == "left") nx--;
+//        else if( dir == "down") ny++;
+//        else if( dir == "up") ny--;
+        
+        //check to see if new coord is outside walls.
+        if(nx < 0 || nx > w/cellWidth-1 || ny < 0 || ny > h/cellWidth-1){
+            clearInterval(gameLoop);
+            
+//            cx.fillText(scoreText, 5, h-50);
+            for(var i=0; i<snakeArray.length; i++){
+                paintCell(snakeArray[i].x,snakeArray[i].y);
+            }
+            paintMessage("GAME OVER", "28px", w/2, h/2, "center");
+            paintMessage("Score: " + score, "20px", w/2, h/2+30, "center");
+            return; // return breaks us out of the current action.
+//            paint();
+        }
+        
+        //check to see if new head is at food.
+        if(nx==food.x && ny==food.y){
+            //yay, we ate the food!
+            score++;
+            //add new food to eat.
+            createFood();
+            // notice we didn't remove a cell from the snake. we're going to add one new element to the array.
+            
+        } else {
+            // no food :(
+            //remove the last cell from the snake since we're going to add one for the head.
+            snakeArray.pop()
+        }
+        
+        //add the new head to the snake.
+        snakeArray.unshift({x: nx, y: ny});
+        
+        // Paint snkae
+        for(var i=0; i<snakeArray.length; i++){
+            paintCell(snakeArray[i].x,snakeArray[i].y);
+        }
+        // Paint food
+        paintCell(food.x, food.y);
+        
+        //add score
+        var scoreText = "Score: " + score;
+		paintMessage(scoreText, "14px", 5, h-5);
+    }
+    
+    function paintCell(x,y){
+        cx.fillStyle = fillColor;
+        cx.fillRect(x*cellWidth,y*cellWidth, cellWidth, cellWidth);
+        cx.strokeStyle = strokeColor;
+        cx.strokeRect(x*cellWidth, y*cellWidth, cellWidth, cellWidth);
+    }
+    
+    function paintMessage(message, size, x,y, align ){
+        cx.fillStyle = fillColor;
+        cx.font = size + " Arial"
+        cx.textAlign = align;
+        cx.fillText(message, x, y);
+    }
+</script>

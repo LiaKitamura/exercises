@@ -1,5 +1,6 @@
 <style>
-#target{ color: rgb(255, 255, 255); width: 150px; height: 100px; float: left; border: 1px solid rgb(34, 34, 34); margin: 10px; padding: 5px; background: rgb(143, 188, 143);}
+#target{  color: rgb(255, 255, 255); width: 150px; height: 100px; float: left; border: 1px solid rgb(34, 34, 34); margin: 10px; padding: 5px; background: rgb(143, 188, 143); background: linear-gradient( 100, 100, 100 );}
+
 </style>
 
 
@@ -16,4 +17,14 @@
       height:$target.height()*2
     }, { duration: 5000 });
   });
+
+
+function canYouSpotTheProblem() {
+
+  for (var counter = 0; counter < 10; counter++)
+    console.log("Happy happy");
+}
+
+canYouSpotTheProblem();
+
 </script>

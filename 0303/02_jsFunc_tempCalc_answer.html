@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp Conversion</title>
+</head>
+<body>
+
+    <h1>The Temperature Converter</h1>
+
+    <p>°F to °C = Deduct 32, then multiply by 5, then divide by 9</p>
+    <p>°C to °F	= Multiply by 9, then divide by 5, then add 32</p>
+
+    <ul>
+        <li>Create a function called celsiusToFahrenheit:
+
+            <ul>
+                <li>Store a celsius temperature into a variable.</li>
+                <li>Convert it to fahrenheit and output "NN°C is NN°F".</li>
+            </ul>
+        </li>
+        <li>Create a function called fahrenheitToCelsius:
+            <ul>
+                <li>Now store a fahrenheit temperature into a variable.</li>
+                <li>Convert it to celsius and output "NN°F is NN°C."</li>
+            </ul>
+        </li>
+
+    </ul>
+    <p>Bonus: create the HTML form inputs for °F and °C and update the answer when one of the boxes changes.</p>
+
+
+    <div class="temp-calc">
+        <label for="">Fahrenheit: <input class="fahrenheit" type="text" value="32"><br>
+        </label><label for="">Celsius: <input class="celsius" type="text" value="0"></label>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            // Fahrenheit to Celsius
+            fahrenheitToCelsius = function(fTemp){
+                return (fTemp - 32) * 5 / 9;
+            };
+
+            // Celsius to Fahrenheit
+            celsiusToFahrenheit = function(cTemp){
+                return cTemp / 5 * 9 + 32;
+            };
+
+            // Get our inputs
+            $fahrenheit = $('input.fahrenheit');
+            $celsius = $('input.celsius');
+
+            $fahrenheit.change(function(){
+                var cTemp;
+
+                cTemp = fahrenheitToCelsius( $fahrenheit.val() );
+
+                $celsius.val( cTemp );
+            });
+
+            $celsius.change(function(){
+                var fTemp;
+
+                fTemp = celsiusToFahrenheit( $celsius.val() )
+
+                $fahrenheit.val( fTemp );
+            })
+
+        });
+
+
+
+    </script>
+</body>
+</html>
