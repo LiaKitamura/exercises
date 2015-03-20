@@ -3,7 +3,7 @@
 *******************/
 /* line 24, styles.scss */
 .selector {
-  font-size: 24px;
+  font-size: 10px;
   border: 1px solid #00f;
 }
 
@@ -19,9 +19,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 51, styles.scss */
 .container {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* line 62, styles.scss */
@@ -94,7 +94,7 @@ a:hover, .button, .button-red {
 
 /* line 122, styles.scss */
 .hero-unit {
-  font-familiy: Helvetica;
+  font-family: Helvetica;
   font-size: 200%;
   font-weight: bold;
   border-right: 1em;
@@ -109,49 +109,49 @@ a:hover, .button, .button-red {
   color: #fff;
 }
 
-/* line 145, styles.scss */
+/* line 146, styles.scss */
 .button-red {
   background-color: red;
 }
 
-/* line 151, styles.scss */
+/* line 152, styles.scss */
 .box, .bigger-box, .huge-box {
   padding: 1em;
   border: 1px #ccc;
 }
 
-/* line 155, styles.scss */
+/* line 156, styles.scss */
 .bigger-box, .huge-box {
   padding: 2em;
 }
 
-/* line 160, styles.scss */
+/* line 161, styles.scss */
 .huge-box {
   padding: 10em;
 }
 
-/* line 166, styles.scss */
+/* line 167, styles.scss */
 .box, .bigger-box, .huge-box, .bigger-box, .huge-box, .huge-box {
   padding: 1em;
   border: 1px #ccc;
 }
 
-/* line 170, styles.scss */
+/* line 171, styles.scss */
 .bigger-box, .huge-box, .huge-box {
   padding: 2em;
 }
 
-/* line 173, styles.scss */
+/* line 174, styles.scss */
 .huge-box {
   padding: 10em;
 }
 
-/* line 176, styles.scss */
+/* line 177, styles.scss */
 a:hover, .button, .button-red, .button, .button-red, .button-red, button {
   text-decoration: underline;
 }
 
-/* line 179, styles.scss */
+/* line 180, styles.scss */
 .button, .button-red, .button-red {
   background-color: #ccc;
   display: inline-block;
@@ -159,19 +159,19 @@ a:hover, .button, .button-red, .button, .button-red, .button-red, button {
   color: #fff;
 }
 
-/* line 193, styles.scss */
+/* line 196, styles.scss */
 div {
   width: 3.20833in;
 }
 
-/* line 197, styles.scss */
+/* line 200, styles.scss */
 .container {
   font: 16px/24px;
   height: 100px;
   width: 500px;
 }
 
-/* line 205, styles.scss */
+/* line 208, styles.scss */
 button:before {
   content: "Quoted string";
   font-family: sans-serif;
@@ -245,7 +245,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 224, styles.scss */
+/* line 227, styles.scss */
 .box, .bigger-box, .huge-box {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -255,7 +255,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-shadow: 0 0 3px 3px #444, inset 5px 5px 6px #555;
 }
 
-/* line 230, styles.scss */
+/* line 233, styles.scss */
 .box, .bigger-box, .huge-box {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

@@ -1,0 +1,131 @@
+// styles.scss
+// Sass stylesheet for portfolio
+
+// Import Compass reset
+@import "compass/reset";
+@import "compass/css3";
+
+body{
+	color: #333;
+	text-align: center;
+	font: {
+		size:1em;
+		family:Georgia, serif;
+	}
+	line-height: 1.5;
+}
+
+a{
+	text-decoration: none;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+h1{
+	font:{
+		family: Bitter, Georgia, serif;
+		size:2.25em;
+	}
+	padding: 0 1em;
+}
+
+// Header
+header{
+	padding: 10em 0 14em;
+	
+	h1{
+		font-style: italic;
+	}
+}
+
+.avatar{
+	width: 100px;
+	height: 100px;
+	
+	@include box-shadow(0 0 0px 3px #fff, 0 0 0 4px #ccc, 0 4px 6px #333);
+	@include border-radius(50%);
+}
+
+.carousel{
+	position: relative;
+}
+.shots-container{
+	width:100%;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	padding: 1em 0;
+}
+.shots{
+	overflow: hidden;
+	margin: 0;
+	padding: 0 2%;
+	$numberOfShots: 10;
+	$shotWidth: 400;
+	$shotHeight: 300;
+	$shotMargin: 10;
+	$shotPadding: 10;
+	$shotBorder: 1;
+	$shotUnit: px;
+	width: $numberOfShots * ($shotWidth + ($shotMargin * 2)+ ($shotPadding * 2) + ($shotBorder * 2)) + $shotUnit;
+	min-height: $shotHeight + $shotUnit;
+	
+	li{
+		float:left;
+		width: $shotWidth + $shotUnit;
+		height: $shotHeight + $shotUnit;
+		margin:0 ($shotMargin + $shotUnit);
+		padding: 0 ($shotPadding + $shotUnit);
+		border: ($shotBorder + $shotUnit) solid #ddd;
+		@include border-radius(3px);
+	}
+}
+
+//.shots-container {
+// 	width: 100%;
+// 	overflow-x: scroll;
+// 	-webkit-overflow-scrolling: touch;
+// 	position: relative;
+// 	padding: 1em 0;
+// }
+// 
+// .shots {
+// 	overflow: hidden;
+// 	margin: 0;
+// 	padding: 0 2%;
+// 	/*
+//     * Shot width = 400px + 20px margin + 20px padding + 2px border
+//     * 442 * 10 (# of shots)
+//     */
+// 	
+// 	width: 4420px;
+// 	min-height: 300px;
+// 	@media screen and (max-width: 450px) {
+// 		/*
+//         * Shot width = 300px + 20px margin + 20px padding + 2px border
+//         * 342 * 10 (# of shots)
+//         */
+// 		
+// 		width: 3420px;
+// 		/* 340 * 10 */
+// 		
+// 		min-height: 250px;
+// 	}
+// 	li {
+// 		float: left;
+// 		width: 400px;
+// 		height: 300px;
+// 		margin: 0 10px;
+// 		padding: 10px;
+// 		background: #fff url(loading.gif) 100px 50% no-repeat;
+// 		border: 1px solid #ddd;
+// 		@include border-radius(3px);
+// 		@media screen and (max-width: 450px) {
+// 			width: 300px;
+// 			height: 225px;
+// 		}
+// 	}
+// }

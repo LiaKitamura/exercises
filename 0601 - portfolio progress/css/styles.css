@@ -64,6 +64,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 8, ../sass/styles.scss */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 12, ../sass/styles.scss */
 body {
   color: #333;
   text-align: center;
@@ -72,34 +78,34 @@ body {
   line-height: 1.5;
 }
 
-/* line 18, ../sass/styles.scss */
+/* line 22, ../sass/styles.scss */
 a {
   text-decoration: none;
 }
 
-/* line 22, ../sass/styles.scss */
+/* line 26, ../sass/styles.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 27, ../sass/styles.scss */
+/* line 31, ../sass/styles.scss */
 h1 {
   font-family: Bitter, Georgia, serif;
   font-size: 2.25em;
   padding: 0 1em;
 }
 
-/* line 37, ../sass/styles.scss */
+/* line 41, ../sass/styles.scss */
 header {
   padding: 10em 0 14em;
 }
-/* line 40, ../sass/styles.scss */
+/* line 44, ../sass/styles.scss */
 header h1 {
   font-style: italic;
 }
 
-/* line 45, ../sass/styles.scss */
+/* line 49, ../sass/styles.scss */
 .avatar {
   width: 100px;
   height: 100px;
@@ -111,28 +117,63 @@ header h1 {
   border-radius: 50%;
 }
 
-/* line 53, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 header, footer {
   background: #f5f5f5;
 }
 
-/* line 57, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
 .content, footer {
   padding: 4em 0 6em;
 }
 
-/* line 61, ../sass/styles.scss */
+/* line 65, ../sass/styles.scss */
 .content {
   border-top: 1px solid #c9c9c9;
   border-bottom: 1px solid #c9c9c9;
 }
 
-/* line 70, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
+.contact-btn {
+  display: inline-block;
+  margin-top: 3em;
+  padding: 1em 3em;
+  background: #ea4c89;
+  color: white;
+  text-transform: uppercase;
+  font-family: Helvetica, Arial, sans-serif;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 6px 0 #ba1655;
+  -webkit-box-shadow: 0 6px 0 #ba1655;
+  box-shadow: 0 6px 0 #ba1655;
+  transition: .25s all ease;
+}
+/* line 88, ../sass/styles.scss */
+.contact-btn:hover {
+  -moz-transform: perspective(0) translate(0, 1px);
+  -ms-transform: perspective(0) translate(0, 1px);
+  -webkit-transform: perspective(0) translate(0, 1px);
+  transform: perspective(0) translate(0, 1px);
+  -moz-box-shadow: 0 5px #ba1655;
+  -webkit-box-shadow: 0 5px #ba1655;
+  box-shadow: 0 5px #ba1655;
+}
+/* line 93, ../sass/styles.scss */
+.contact-btn:active {
+  transform: translate3d(0, 5px, 0);
+  -moz-box-shadow: 0 1px #ba1655;
+  -webkit-box-shadow: 0 1px #ba1655;
+  box-shadow: 0 1px #ba1655;
+}
+
+/* line 101, ../sass/styles.scss */
 .carousel {
   position: relative;
 }
 
-/* line 73, ../sass/styles.scss */
+/* line 104, ../sass/styles.scss */
 .shots-container {
   width: 100%;
   overflow-x: scroll;
@@ -141,14 +182,14 @@ header, footer {
   padding: 1em 0;
 }
 
-/* line 80, ../sass/styles.scss */
+/* line 111, ../sass/styles.scss */
 .shots {
   overflow: hidden;
   margin: 0;
   padding: 0 2%;
   min-height: 300px;
 }
-/* line 94, ../sass/styles.scss */
+/* line 125, ../sass/styles.scss */
 .shots li {
   float: left;
   width: 400px;
@@ -161,10 +202,83 @@ header, footer {
   border-radius: 3px;
 }
 
-/* line 108, ../sass/styles.scss */
+/* line 139, ../sass/styles.scss */
 footer p {
   color: #777;
   padding: 0 1em;
+}
+
+/* line 147, ../sass/styles.scss */
+.contact {
+  -moz-transform: perspective(0) translate(0, 100%);
+  -ms-transform: perspective(0) translate(0, 100%);
+  -webkit-transform: perspective(0) translate(0, 100%);
+  transform: perspective(0) translate(0, 100%);
+  position: fixed;
+  right: 10%;
+  bottom: 0;
+  background: #777;
+  border: 1px solid #555;
+  border-bottom: none;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  padding: 1em;
+}
+/* line 158, ../sass/styles.scss */
+.contact input, .contact textarea {
+  width: 250px;
+  padding: 5px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+/* line 166, ../sass/styles.scss */
+.contact span.close {
+  opacity: 0;
+  background: #000;
+  color: white;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  border: 2px solid white;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.5em;
+  position: absolute;
+  top: -.75em;
+  right: -.75em;
+}
+
+/* line 193, ../sass/styles.scss */
+#lightbox {
+  position: fixed;
+  /* keeps the lightbox window in the current viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: none;
+}
+
+/* line 203, ../sass/styles.scss */
+#lightbox p {
+  text-align: right;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+/* line 209, ../sass/styles.scss */
+#lightbox img {
+  -moz-box-shadow: 0 0 25px #111;
+  -webkit-box-shadow: 0 0 25px #111;
+  box-shadow: 0 0 25px #111;
+  max-width: 640px;
 }
 
 @font-face {
